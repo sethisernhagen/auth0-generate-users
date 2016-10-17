@@ -3,33 +3,33 @@ from random import randrange
 from pprint import pprint as pp
 
 
-EMAIL_DOMAIN = ""
-DOMAIN = ""
-CONNECTION = ""
-PASSWORD = ""
-TOKEN = ""
-NUM_USERS = 20
+AUTH0_DOMAIN = ""
+AUTH0_CONNECTION = ""
+AUTH0_TOKEN = ""
+TEST_EMAIL_DOMAIN = ""
+TEST_PASSWORD = ""
+TEST_NUM_USERS = 20
 
 def create_user(user):
     auth0 = Auth0(
-        domain=DOMAIN,
+        domain=AUTH0_DOMAIN,
         token=TOKEN,
     )
 
-    auth0_client = Auth0(DOMAIN, TOKEN).users
+    auth0_client = Auth0(AUTH0_DOMAIN, AUTH0_TOKEN).users
     auth0_client.create(user)
 
 def main():
 
-    for _ in range(NUM_USERS):
+    for _ in range(TEST_NUM_USERS):
         user = dict(
-            connection=CONNECTION,
+            connection=AUTH0_CONNECTION,
             email='steve-test{}@{}'.format(
                 randrange(0, 1000, 2),
-                EMAIL_DOMAIN
+                TEST_EMAIL_DOMAIN
             ),
             name='Steve Jones',
-            password=PASSWORD
+            password=TEST_PASSWORD
         )
 
         pp(user)
