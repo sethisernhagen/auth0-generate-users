@@ -17,4 +17,4 @@ This is a simple script that creates a defined numbers of Auth0 users.
 
 ## To run the script
 
- 1. python main.py
+        python main.py
