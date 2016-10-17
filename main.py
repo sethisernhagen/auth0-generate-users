@@ -13,7 +13,7 @@ TEST_NUM_USERS = 20
 def create_user(user):
     auth0 = Auth0(
         domain=AUTH0_DOMAIN,
-        token=TOKEN,
+        token=AUTH0_TOKEN,
     )
 
     auth0_client = Auth0(AUTH0_DOMAIN, AUTH0_TOKEN).users
